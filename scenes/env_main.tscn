@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://xtswu4a1xl25"]
+
+[ext_resource type="Script" path="res://views/environment/env_main.gd" id="1_cyado"]
+[ext_resource type="Texture2D" uid="uid://cbmhrmc8vf1ba" path="res://views/environment/env_main.webp" id="2_tbgu7"]
+[ext_resource type="PackedScene" uid="uid://c4dq37sw1guew" path="res://scenes/itm_lemon.tscn" id="3_m5bte"]
+[ext_resource type="PackedScene" uid="uid://dy03mpip4oxg2" path="res://scenes/env_shelf_01.tscn" id="4_fsrct"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(1, 0)
+script = ExtResource("1_cyado")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = 1149.0
+offset_bottom = 643.0
+grow_vertical = 2
+texture = ExtResource("2_tbgu7")
+
+[node name="ItmLemon" parent="." instance=ExtResource("3_m5bte")]
+position = Vector2(167, 574)
+
+[node name="EnvShelf01" parent="." instance=ExtResource("4_fsrct")]
+show_behind_parent = true
+position = Vector2(962, 408)

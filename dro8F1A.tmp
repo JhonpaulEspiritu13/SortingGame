@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://12hqbdppayr8" path="res://blueshelf.png" id="2_nvjsy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0cfwi"]
-size = Vector2(304, 224)
+size = Vector2(151.75, 92)
 
 [node name="dropb" type="StaticBody2D" groups=["dropable"]]
 position = Vector2(-137, 61)
@@ -17,6 +17,6 @@ texture = ExtResource("2_nvjsy")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-7, 3)
+position = Vector2(-85.875, -63)
 shape = SubResource("RectangleShape2D_0cfwi")
 metadata/_edit_group_ = true

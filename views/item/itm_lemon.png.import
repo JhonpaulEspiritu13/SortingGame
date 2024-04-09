@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbmhrmc8vf1ba"
-path="res://.godot/imported/dojobg.webp-f0c409b3930c94356a7f229fd83d4205.ctex"
+uid="uid://b1cg2qmf0ka6r"
+path="res://.godot/imported/itm_lemon.png-b9202b169c485e2cfa039cf209316e36.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dojobg.webp"
-dest_files=["res://.godot/imported/dojobg.webp-f0c409b3930c94356a7f229fd83d4205.ctex"]
+source_file="res://views/item/itm_lemon.png"
+dest_files=["res://.godot/imported/itm_lemon.png-b9202b169c485e2cfa039cf209316e36.ctex"]
 
 [params]
 
