@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://xtswu4a1xl25"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_qsdfm"]
+[ext_resource type="Texture2D" uid="uid://cbmhrmc8vf1ba" path="res://dojobg.webp" id="2_kgny7"]
+[ext_resource type="PackedScene" uid="uid://c4dq37sw1guew" path="res://lemon.tscn" id="2_p11o5"]
+[ext_resource type="PackedScene" uid="uid://dy03mpip4oxg2" path="res://dropb.tscn" id="3_e13es"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(1, 0)
+script = ExtResource("1_qsdfm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = 1149.0
+offset_bottom = 643.0
+grow_vertical = 2
+texture = ExtResource("2_kgny7")
+
+[node name="lemon" parent="." instance=ExtResource("2_p11o5")]
+position = Vector2(167, 574)
+
+[node name="dropb" parent="." instance=ExtResource("3_e13es")]
+show_behind_parent = true
+position = Vector2(787, 408)

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dku8nyvyjlaaa"]
+
+[ext_resource type="Script" path="res://views/environment/env_script/env_shelf_spot.gd" id="1_st2mi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4d5vf"]
+size = Vector2(139, 109)
+
+[node name="EnvShelfSpot" type="StaticBody2D" groups=["shelf_dropable"]]
+script = ExtResource("1_st2mi")
+
+[node name="SpotPanel" type="Panel" parent="."]
+offset_right = 139.0
+offset_bottom = 109.0
+
+[node name="SpotCollisonShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(69.5, 54.5)
+shape = SubResource("RectangleShape2D_4d5vf")
