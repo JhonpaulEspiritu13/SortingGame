@@ -1,0 +1,45 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\draxx\\Desktop\\Homework\\College\\Advanced C\u002B\u002B\\Final Project\\SortingGame\\SortingGameC\u002B\u002B\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{98509A76-E28B-4EC6-B7B4-C67F54BA7C70}|SortingGameC\u002B\u002B\\SortingGameC\u002B\u002B.vcxproj|C:\\Users\\draxx\\Desktop\\Homework\\College\\Advanced C\u002B\u002B\\Final Project\\SortingGame\\SortingGameC\u002B\u002B\\SortingGameC\u002B\u002B\\mainPrototypeProject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{98509A76-E28B-4EC6-B7B4-C67F54BA7C70}|SortingGameC\u002B\u002B\\SortingGameC\u002B\u002B.vcxproj|solutionrelative:SortingGameC\u002B\u002B\\mainPrototypeProject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "mainPrototypeProject.cpp",
+              "DocumentMoniker": "C:\\Users\\draxx\\Desktop\\Homework\\College\\Advanced C\u002B\u002B\\Final Project\\SortingGame\\SortingGameC\u002B\u002B\\SortingGameC\u002B\u002B\\mainPrototypeProject.cpp",
+              "RelativeDocumentMoniker": "SortingGameC\u002B\u002B\\mainPrototypeProject.cpp",
+              "ToolTip": "C:\\Users\\draxx\\Desktop\\Homework\\College\\Advanced C\u002B\u002B\\Final Project\\SortingGame\\SortingGameC\u002B\u002B\\SortingGameC\u002B\u002B\\mainPrototypeProject.cpp",
+              "RelativeToolTip": "SortingGameC\u002B\u002B\\mainPrototypeProject.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-26T19:13:27.294Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
