@@ -2,6 +2,8 @@ extends StaticBody2D
 
 # Initalizes the panel to show.
 var spot_panel
+# If the current item spot is available
+var is_open = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

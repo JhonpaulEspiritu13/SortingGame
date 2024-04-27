@@ -16,11 +16,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	# If the item can be dragged, check for user input.
 	if draggable:
 		if Input.is_action_just_pressed("click"):
 			initialPos = global_position
 			offset = get_global_mouse_position() - global_position
 			global.is_dragging = true
+			
+			# Makes the body ref open to other items.
+			if body_ref != null:
+				body_ref.is_open = true
 		if Input.is_action_pressed("click"):
 			global_position = get_global_mouse_position()
 		elif Input.is_action_just_released("click"):
@@ -38,9 +43,13 @@ func _process(delta):
 				
 				# Tweens the item to go to calculated spot.
 				tween.tween_property(self, "position", body_offset, 0.2).set_ease(Tween.EASE_OUT)
+				
+				# Makes the current body ref unavailable to other items.
+				body_ref.is_open = false
 			else:
 				# Tweens item to go back to inital position.
 				tween.tween_property(self, "global_position",initialPos, 0.2).set_ease(Tween.EASE_OUT)
+				
 
 # Once the mouse enters the area, set dragable to true and pop out the image image.
 func _on_mouse_entered():
@@ -51,11 +60,11 @@ func _on_mouse_entered():
 # Once the mouse leaves, return to normal.
 func _on_area_2d_mouse_exited():
 	if not global.is_dragging: # Ensures mouse is not being dragged so this function doesn't run.
-		draggable = true 
+		draggable = false 
 		scale = Vector2(1,1)
 
 func _on_area_2d_body_entered(body:StaticBody2D):
-	if body.is_in_group('shelf_dropable'):
+	if body.is_in_group('shelf_dropable') and body.is_open:
 		is_inside_droppable = true
 		body.modulate = Color(Color.GOLD, 1)
 		body_ref = body
