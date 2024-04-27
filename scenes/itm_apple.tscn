@@ -1,20 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://jse5ymavd3vj"]
 
 [ext_resource type="Script" path="res://views/item/item_script/itm_fruit.gd" id="1_5625v"]
-[ext_resource type="Texture2D" uid="uid://1ilcoq8syj4y" path="res://views/item/item_assets/apple.png" id="2_f74h0"]
+[ext_resource type="Texture2D" uid="uid://1ilcoq8syj4y" path="res://views/item/item_assets/itm_apple.png" id="2_tvp3f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qdkpd"]
 size = Vector2(52, 52)
 
-[node name="ItmApple" type="Node2D"]
-position = Vector2(122, 72)
+[node name="ItmApple" type="Node2D" groups=["item"]]
+position = Vector2(39, 39)
 script = ExtResource("1_5625v")
 
 [node name="SpriteApple" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0.375003, 0.0625033)
 scale = Vector2(4.29167, 3.70833)
-texture = ExtResource("2_f74h0")
+texture = ExtResource("2_tvp3f")
 
 [node name="Area2D" type="Area2D" parent="."]
 

@@ -6,8 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qdkpd"]
 size = Vector2(52, 52)
 
-[node name="ItmLemon" type="Node2D"]
-position = Vector2(122, 72)
+[node name="ItmLemon" type="Node2D" groups=["item"]]
+position = Vector2(39, 39)
 script = ExtResource("1_pgarg")
 
 [node name="SpriteLemon" type="Sprite2D" parent="."]

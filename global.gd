@@ -6,4 +6,11 @@ func _ready():
 func _process(delta):
 	pass
 
+# Dictionary that holds an item's name by its ID.
+var itm_dict = {
+	1: "itm_lemon",
+	2: "itm_apple",
+}
+
+# Variable to check if an object is currently being dragged.
 var is_dragging = false
