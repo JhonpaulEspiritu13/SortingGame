@@ -55,10 +55,14 @@ func create_item_instance():
 		# Sets item properties.
 		itm_instance.position = panel_offset
 		itm_instance.top_level = true
+		itm_instance.modulate.a = 0
 		
 		# Adds a new child to instance.
 		add_child(itm_instance)
-		print(itm_instance.get_parent())
+		# Animates an object appearing
+		var tween = get_tree().create_tween()
+		tween.tween_property(itm_instance, "modulate:a", 1, 0.25).set_ease(Tween.EASE_OUT)
+		
 	# Prints out an error if init was not called.
 	else:
 		print("Spawner not initialized with item!")

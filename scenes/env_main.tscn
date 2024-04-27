@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://xtswu4a1xl25"]
+[gd_scene load_steps=7 format=3 uid="uid://xtswu4a1xl25"]
 
 [ext_resource type="Script" path="res://views/environment/env_script/env_main.gd" id="1_uh0fa"]
 [ext_resource type="Texture2D" uid="uid://cbmhrmc8vf1ba" path="res://views/environment/env_main.webp" id="2_sc2yd"]
 [ext_resource type="PackedScene" uid="uid://dy03mpip4oxg2" path="res://scenes/env_shelf_01.tscn" id="4_fsrct"]
+[ext_resource type="PackedScene" uid="uid://be177f0s87s7s" path="res://scenes/env_checklist.tscn" id="6_06k03"]
 [ext_resource type="PackedScene" uid="uid://bqmj8gxrwkdgu" path="res://scenes/env_shelf_02.tscn" id="6_bq554"]
 [ext_resource type="PackedScene" uid="uid://dhxcw2jajj7rf" path="res://scenes/env_itm_spawner.tscn" id="7_cb8xm"]
 
@@ -21,22 +22,52 @@ offset_bottom = 643.0
 grow_vertical = 2
 texture = ExtResource("2_sc2yd")
 
-[node name="EnvShelf01" parent="." instance=ExtResource("4_fsrct")]
-show_behind_parent = true
-position = Vector2(198, 375)
+[node name="ConfirmButton" type="Button" parent="."]
+self_modulate = Color(0.372549, 0.92549, 0, 1)
+offset_left = 889.0
+offset_top = 139.0
+offset_right = 1016.0
+offset_bottom = 171.0
+text = "Confirm"
 
-[node name="EnvShelf02" parent="." instance=ExtResource("6_bq554")]
-position = Vector2(963, 375)
-
-[node name="Button" type="Button" parent="."]
+[node name="ResetButton" type="Button" parent="."]
+modulate = Color(1, 0.266667, 0.27451, 1)
 offset_left = 889.0
 offset_top = 191.0
 offset_right = 1016.0
 offset_bottom = 223.0
 text = "Reset"
 
+[node name="TotalPointsLabel" type="RichTextLabel" parent="."]
+offset_left = 475.0
+offset_top = 8.0
+offset_right = 575.0
+offset_bottom = 36.0
+text = "Total Points:"
+
+[node name="TotalPointsCounter" type="RichTextLabel" parent="."]
+offset_left = 575.0
+offset_top = 3.0
+offset_right = 745.0
+offset_bottom = 73.0
+theme_override_font_sizes/normal_font_size = 25
+text = "0"
+
+[node name="EnvShelf01" parent="." instance=ExtResource("4_fsrct")]
+show_behind_parent = true
+position = Vector2(200, 375)
+
+[node name="EnvShelf02" parent="." instance=ExtResource("6_bq554")]
+position = Vector2(950, 375)
+
 [node name="EnvSpawnerLemon" parent="." instance=ExtResource("7_cb8xm")]
 position = Vector2(54, 56)
 
 [node name="EnvSpawnerApple" parent="." instance=ExtResource("7_cb8xm")]
 position = Vector2(178, 56)
+
+[node name="EnvNeeded01" parent="." instance=ExtResource("6_06k03")]
+position = Vector2(450, 262)
+
+[connection signal="pressed" from="ConfirmButton" to="." method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]

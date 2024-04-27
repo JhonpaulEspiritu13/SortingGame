@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dy03mpip4oxg2"]
 
-[ext_resource type="Script" path="res://views/environment/env_script/env_shelf_01.gd" id="1_n45rf"]
+[ext_resource type="Script" path="res://views/environment/env_script/env_shelf.gd" id="1_squ65"]
 [ext_resource type="Texture2D" uid="uid://12hqbdppayr8" path="res://views/environment/env_shelf_01.png" id="2_nvjsy"]
 [ext_resource type="PackedScene" uid="uid://dku8nyvyjlaaa" path="res://scenes/env_shelf_spot.tscn" id="3_a7a3t"]
 
@@ -9,7 +9,7 @@ size = Vector2(312, 226)
 
 [node name="EnvShelf01" type="StaticBody2D"]
 position = Vector2(191, 133)
-script = ExtResource("1_n45rf")
+script = ExtResource("1_squ65")
 
 [node name="ShelfSprite" type="Sprite2D" parent="."]
 position = Vector2(-191, -133)

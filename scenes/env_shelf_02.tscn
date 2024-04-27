@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bqmj8gxrwkdgu"]
 
-[ext_resource type="Script" path="res://views/environment/env_script/env_shelf_01.gd" id="1_v8jai"]
+[ext_resource type="Script" path="res://views/environment/env_script/env_shelf.gd" id="1_v8jai"]
 [ext_resource type="Texture2D" uid="uid://dk7gqtk15224g" path="res://views/environment/env_assets/brownshelf.png" id="2_73snl"]
 [ext_resource type="PackedScene" uid="uid://dku8nyvyjlaaa" path="res://scenes/env_shelf_spot.tscn" id="3_m0ia7"]
 

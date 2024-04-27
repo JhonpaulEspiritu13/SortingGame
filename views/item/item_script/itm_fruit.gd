@@ -28,35 +28,16 @@ func _process(delta):
 			initialPos = global_position
 			offset = get_global_mouse_position() - global_position
 			global.is_dragging = true
-			
-			# Makes the body ref open to other items.
-			if body_ref != null:
-				body_ref.is_open = true
 		if Input.is_action_pressed("click"):
 			global_position = get_global_mouse_position()
 		# If the mouse was released.
 		elif Input.is_action_just_released("click"):
 			global.is_dragging = false
-			var tween = get_tree().create_tween()
 			if is_inside_droppable:
-				# Don't know if this is a good way to do it, but it is certainly a way to do it.
-				# Gets the x and y size of the shelf spot the item is accessing. (Divided by 2 to get center)
-				var body_size_x = (body_ref.get_node("SpotCollisonShape2D").shape.size.x / 2)
-				var body_size_y = (body_ref.get_node("SpotCollisonShape2D").shape.size.y / 2)
-				
-				# Calculates the offset position to put item at.
-				var body_offset = Vector2((body_ref.global_position.x + body_size_x), 
-							(body_ref.global_position.y + body_size_y))
-				
-				# Tweens the item to go to calculated spot.
-				tween.tween_property(self, "position", body_offset, 0.2).set_ease(Tween.EASE_OUT)
-				
-				# Removes current node from its parent, and then parents it onto another node.
-				get_parent().remove_child(self)
-				body_ref.add_child(self)
+				switch()
 			else:
 				# Destroy current object.
-				destruct(tween)
+				destruct()
 				
 				# Old code, won't be needed as object will erase itself.
 				# Tweens item to go back to inital position.
@@ -90,15 +71,18 @@ func is_available(node_to_check):
 func _on_area_2d_body_entered(body:StaticBody2D):
 	if body.is_in_group('shelf_dropable') and is_available(body):
 		is_inside_droppable = true
-		body.modulate = Color(Color.GOLD, 1)
+		body.modulate.a = 1
 		body_ref = body
 
 func _on_area_2d_body_exited(body:StaticBody2D):
+	if body.is_in_group('shelf_dropable') and is_available(body):
+		body.modulate.a = 0.70
 	if not body.is_in_group('shelf_dropable'):
 		is_inside_droppable = false
 		
 # When function is called, destroy current object. Ensure that it cannot be dragged anymore.
-func destruct(tween):
+func destruct():
+	var tween = get_tree().create_tween()
 	# Applies dragging so that object won't be interactable as function is happening.
 	global.is_dragging = true
 	# Applies tween to gradually disappear the object.
@@ -109,4 +93,21 @@ func destruct(tween):
 	global.is_dragging = false
 	queue_free()
 
+func switch():
+	var tween = get_tree().create_tween()
+	# Don't know if this is a good way to do it, but it is certainly a way to do it.
+	# Gets the x and y size of the shelf spot the item is accessing. (Divided by 2 to get center)
+	var body_size_x = (body_ref.get_node("SpotCollisonShape2D").shape.size.x / 2)
+	var body_size_y = (body_ref.get_node("SpotCollisonShape2D").shape.size.y / 2)
+	
+	# Calculates the offset position to put item at.
+	var body_offset = Vector2((body_ref.global_position.x + body_size_x), 
+				(body_ref.global_position.y + body_size_y))
+	
+	# Tweens the item to go to calculated spot.
+	tween.tween_property(self, "position", body_offset, 0.2).set_ease(Tween.EASE_OUT)
+	
+	# Removes current node from its parent, and then parents it onto another node.
+	get_parent().remove_child(self)
+	body_ref.add_child(self)
 

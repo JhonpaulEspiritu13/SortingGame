@@ -9,6 +9,7 @@ size = Vector2(139, 109)
 script = ExtResource("1_st2mi")
 
 [node name="SpotPanel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.784314)
 offset_right = 139.0
 offset_bottom = 109.0
 
