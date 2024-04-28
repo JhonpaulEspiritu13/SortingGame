@@ -21,7 +21,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	# If the item can be dragged, check for user input.
 	if draggable:
 		if Input.is_action_just_pressed("click"):
@@ -101,7 +101,7 @@ func switch():
 	var body_size_y = (body_ref.get_node("SpotCollisonShape2D").shape.size.y / 2)
 	
 	# Calculates the offset position to put item at.
-	var body_offset = Vector2((body_ref.global_position.x + body_size_x), 
+	body_offset = Vector2((body_ref.global_position.x + body_size_x), 
 				(body_ref.global_position.y + body_size_y))
 	
 	# Tweens the item to go to calculated spot.

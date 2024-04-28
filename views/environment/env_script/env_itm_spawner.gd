@@ -27,7 +27,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	# If there are the same amount of children as there were before,
 	# this spawner is empty.
 	if get_child_count() == child_count:

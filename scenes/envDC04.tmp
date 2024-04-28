@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhxcw2jajj7rf"]
+
+[ext_resource type="Script" path="res://views/environment/env_script/env_itm_spawner.gd" id="1_5x41h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5yt5"]
+size = Vector2(105, 105)
+
+[node name="EnvItmSpawner" type="StaticBody2D"]
+script = ExtResource("1_5x41h")
+
+[node name="SpawnerPanel" type="Panel" parent="."]
+offset_right = 105.0
+offset_bottom = 105.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(52.5, 52.5)
+shape = SubResource("RectangleShape2D_c5yt5")

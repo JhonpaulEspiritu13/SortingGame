@@ -9,7 +9,7 @@ func _ready():
 	modulate.a = 0.70
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	# If an item is currently being dragged, show the panel.
 	if global.is_dragging:
 		spot_panel.visible = true
